@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div class="navbar">
+        <div class="navbar_panel1">
+            <div class="navbar_logo"></div>
+            <div class="searchicon">
+                <i class="fa-solid fa-magnifying-glass" ></i>
+            </div>
+            <div class="searchbox"><input placeholder="search" id="searchwindow">
+            </div>
+        </div>
+        <div class="navbar_tabs">
+            <a href="dashboard.html" class="navbar_items">Home</a> 
+            <a href="Aboutus.html" class="navbar_items">About Us</a>
+            <a href="attachments.html" class="navbar_items">My Attachments</a>
+            <a href="gallery.html" class="navbar_items">Gallery</a>
+            <a href="events.html" class="navbar_items">Events</a>
+            <a href="notifications.html" class="navbar_items">Notifications</a>
+        </div>
+        <div class="profile">
+            <div class="pp"></div>
+            <div class="profile_caption"><p class="profClass">Debaditya</p>
+            </div>
+        </div>
+    </div>
+    <title>Alumini Network</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="backpic">
+        <div class="write">
+            <h1>Hello Debaditya</h1>
+            <p>Aspiring Tech Professional | B-Tech in Computer Science <a href="edit.html" ><h6><i class="fa-solid fa-pen-to-square"></i></h6></a></p>
+            
+            <br>
+            <button onclick="toggleEditProfileModal()" class="edit-profile-btn">Edit Profile</button>
+            <!-- Edit Profile Modal -->
+<div id="editProfileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="toggleEditProfileModal()">&times;</span>
+        <h2>Edit Profile</h2>
+        <form id="editProfileForm" onsubmit="submitProfileEdit(event)">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" placeholder="Enter your name" required>
+            
+            <label for="editBio">Bio:</label>
+            <textarea id="editBio" name="bio" placeholder="Enter your bio" required></textarea>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+            
+        </div>
+        <div class="box11">
+            <div class="largebox">
+                <div class="container">
+                    <div class="profile-card" id="profile">
+                        
+                        <h2 class="name">Debaditya Mukherjee</h2>
+                        <h3 class="title">B-Tech | CSE(AI and ML) </h3>
+                        <p class="bio">Passionate about technology and innovation. Experienced in web development and software engineering.</p>
+                    </div>
+                    <div class="skills" id="skills">
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>HTML & CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Python</li>
+                        </ul>
+                    </div>
+
+                    <div class="education">
+                        <h3>Qualification:</h3><br>
+                        <ul>
+                            <li><p>Delhi Public School Ruby Park</p></li><br>
+                            
+                            <li><p>Institute of Engineering and Management</p></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="contact-info" id="contact">
+                        <h3>Contact Information</h3>
+                        <p>Linkdin: <a href="https://www.linkedin.com/in/Debaditya-081572321/" target="_blank">https://www.linkedin.com/in/Debaditya-081657721/</a></p>
+                        <p>Email: <a href="Debaditya@gmail.com" target="_blank">Debaditya@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="smallbox">
+                <br><br><br>
+                <div class="friends">
+                    <a href="#" style="color: #003366; font-family: 'Comic Sans MS';">230 followers</a>
+                    <a href="#" style="color: #003366; font-family: 'Comic Sans MS';">18 posts</a>
+                    <a href="#" style="color: #003366; font-family: 'Comic Sans MS';">170 following</a>
+
+                </div><br><br>
+                <h1>Debaditya Mukherjee , 19</h1><br>
+                <h4>Kolkata, West Bengal, INDIA</h4><br><br><br><br><br>
+                <h3>B-Tech 1st year student (CSE (AI and ML))</h3><br>
+                <h3>Institute of Engineering & Management (IEM)</h3>
+            </div>
+        </div>
+        <div class="profimg" style="background-image: url(post3.jpg);"></div>
+    </div>
+    
+    <script>
+        function toggleEditProfileModal() {
+            const modal = document.getElementById('editProfileModal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+    
+        function submitProfileEdit(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get values from input fields
+            const name = document.getElementById('editName').value;
+            const bio = document.getElementById('editBio').value;
+    
+            // Update profile details on the page
+            document.querySelector('.name').innerText = name;
+            document.querySelector('.bio').innerText = bio;
+    
+            // Hide the modal
+            toggleEditProfileModal();
+        }
+    
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('editProfileModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+    
+</body>
+</html>
